@@ -1,0 +1,7 @@
+streamlit
+openai
+python-dotenv
+mailchimp-marketing
+llama-index
+plotly
+pandas
