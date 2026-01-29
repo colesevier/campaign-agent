@@ -7,7 +7,7 @@ A compact, extensible agent for planning and executing outreach campaigns using 
 - What it is: a Python-based campaign planning and execution agent that orchestrates LLM-based planners, parsers, and simulated channels to design and test outreach campaigns.
 - Why it matters: shows end-to-end product thinking — from model prompts to orchestration, to external integrations and simulated feedback loops — with reproducible code and clear extension points.
 
-## Highlights / What to call out in the application
+## Highlights
 
 - LLM integration and prompt engineering (files: `llama3.py`, `llama_parser.py`) — showcases prompt design, parsing, and deterministic output handling.
 - Planner / agent architecture (`campaign_planner.py`, `agent.py`) — demonstrates separation of concerns, modular pipeline stages, and orchestrated decision-making.
@@ -15,13 +15,7 @@ A compact, extensible agent for planning and executing outreach campaigns using 
 - API client and real-world wiring: `mailchimp_client.py` — demonstrates working with external SaaS and building production connectors.
 - Refinement loop: `refinement_agent.py` — shows experience with iterative improvements using model feedback.
 
-Include these specific artifacts in your Citadel submission to demonstrate depth:
-- Short walkthrough (3–5 minute screencast) showing: launching an end-to-end simulation, viewing planner output, and performing a simulated send.
-- A short README (this file) plus a one-page architecture diagram.
-- A demo script or notebook that runs an end-to-end scenario (see “Try it locally”).
-- Unit tests and a sample test report (see “Testing & verification”).
-
-## Architecture (high level)
+## Architecture 
 
 - agent.py — entrypoint and orchestration glue. Responsible for configuring and launching the pipeline.
 - campaign_planner.py — builds campaign plans: audiences, messages, schedules, goals.
@@ -73,7 +67,6 @@ Run tests (pytest assumed):
    pip install pytest
    pytest -q
 
-If you’d like, I can scaffold tests for core modules (planner, parser, simulated runner) and wire a basic CI job.
 
 ## How to demonstrate experience in the application
 
