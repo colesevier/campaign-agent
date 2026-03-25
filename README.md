@@ -50,9 +50,6 @@ A compact, extensible agent for planning and executing outreach campaigns using 
 
    python agent.py
 
-Notes:
-- If `agent.py` has flags (e.g., `--simulate` or `--dry-run`), use them to avoid real sends. If you want, I can inspect `agent.py` and update these instructions with exact flags.
-- To exercise the Mailchimp integration, ensure API keys are provided via environment variables (see `mailchimp_client.py`) before enabling the execution layer.
 
 ## Tests & verification
 
@@ -67,54 +64,3 @@ Run tests (pytest assumed):
    pip install pytest
    pytest -q
 
-
-## How to demonstrate experience in the application
-
-1. Show measurable results: include example plan outputs (JSON), simulated metrics (open rate, conversions), and a short write-up of how you would validate in production.
-2. Explain design choices: why simulation before live sends, how parsing reduces risk, and how refinement closes the loop.
-3. Show code quality: point reviewers to unit tests, modular files, and idempotent orchestration code.
-4. Highlight complexity handled: LLM output parsing, API error handling, and simulation fidelity.
-
-## Extension points (what a reviewer / engineer can do next)
-
-- Add connectors for other channels (SMS, Slack) — create a new client and a runner mirroring `mailchimp_client.py` and `simulated_channel_runner.py`.
-- Add stronger contract tests for the LLM parser and integrate snapshot testing for planner outputs.
-- Add observability: Prometheus metrics, structured logs, and a dashboard.
-- Add CI: run linting, tests, and a smoke simulation on each PR.
-
-## Security & privacy notes
-
-- Never commit real API credentials. Use environment variables or a secrets store for provider keys.
-- When experimenting with real audiences, obey applicable privacy and spam regulations and acquire consent.
-
-## Files to point reviewers at
-
-- `agent.py` — entrypoint and recommended quick demo.
-- `campaign_planner.py` — core product logic.
-- `llama3.py`, `llama_parser.py` — LLM integration + parsing.
-- `mailchimp_client.py` — external integration and real-world wiring.
-- `simulated_channel_runner.py`, `simulated_feedback.py` — safe test harness.
-
-## Suggested submission checklist for Citadel launch
-
-- This README (project context and run instructions).
-- Architecture diagram (1 page).
-- 3–5 minute screencast demo.
-- Example outputs (JSON) and a short results write-up (1–2 pages) showing how the agent improves plans.
-- Unit tests and test results / badge (or instructions to run tests).
-
----
-
-If you want, I can now:
-
-1. Inspect `agent.py` and replace the placeholder run instructions with exact flags and environment variables.
-2. Scaffold a minimal test suite and a Github Actions CI workflow to run tests and a smoke simulation.
-3. Produce the 1-page architecture diagram content you can paste into a diagramming tool.
-
-Which of the above would you like me to do next?
-
----
-
-Maintainer: project owner
-
-License: (add a license file e.g. MIT or Apache-2.0)
